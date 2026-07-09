@@ -10,9 +10,12 @@ import cors from 'cors';
 
 const app = express();
 app.use(clerkMiddleware);
-app.use(cors())
+app.use(cors({
+  origin: FRONTEND_URL , credentials: true
+}));
 app.use(express.json());
 const PORT = process.env.PORT;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 app.get('/', async (req, res) => {
   res.status(200).json({ok:true});
