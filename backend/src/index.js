@@ -15,13 +15,14 @@ import cors from 'cors';
 
 const app = express();
 app.use(clerkMiddleware);
+const PORT = process.env.PORT || 3000;
 
 const FRONTEND_URL = process.env.FRONTEND_URL;
 app.use(cors({
   origin: FRONTEND_URL , credentials: true
 }));
 app.use(express.json());
-const PORT = process.env.PORT || 3000;
+
 
 
 const publicDir= path.join(process.cwd(), "public");
