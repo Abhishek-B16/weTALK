@@ -25,7 +25,7 @@ app.use(express.json());
 
 
 
-const publicDir= path.join(process.cwd(), "public");
+const publicDir= path.join(process.cwd(), "dist");
 
 
 
