@@ -26,8 +26,7 @@ app.use(express.json());
 
 
 const publicDir= path.join(process.cwd(), "public");
-console.log("Public Directory:", publicDir);
-console.log("Public Exists:", fs.existsSync(publicDir));
+
 
 
 // app.get('/', async (req, res) => {
