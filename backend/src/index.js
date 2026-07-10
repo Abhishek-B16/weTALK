@@ -26,9 +26,9 @@ const PORT = process.env.PORT || 3000;
 
 const publicDir= path.join(process.cwd(), "public");
 
-app.get('/', async (req, res) => {
-  res.status(200).json({ok:true});
-});
+// app.get('/', async (req, res) => {
+//   res.status(200).json({ok:true});
+// });
 
 // if the public directory exists, serve the static files
 // this is for the production build
