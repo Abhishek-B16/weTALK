@@ -29,7 +29,7 @@ const publicDir= path.join(process.cwd(), "public");
 
 
 
-app.get('/', async (req, res) => {
+app.get('/health', async (req, res) => {
   res.status(200).json({ok:true});
 });
 
