@@ -4,6 +4,7 @@ import express from 'express';
 import "dotenv/config";
 import fs from 'fs';
 import path from 'path';
+import job from "./lib/cron.js";
 
 
 
