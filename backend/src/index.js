@@ -15,13 +15,13 @@ import cors from 'cors';
 
 
 
-
+const app = express();
 
 // it's important that you don't parse the webhook event data, it should be in the raw format
 app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }), clerkWebhook);
 
 
-const app = express();
+
 app.use(clerkMiddleware());
 const PORT = process.env.PORT || 3000;
 
