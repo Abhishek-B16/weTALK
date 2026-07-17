@@ -8,6 +8,7 @@ import job from "./lib/cron.js";
 import clerkWebhook from "./webhooks/clerk.webhook.js";
 import authRoutes from "./routes/auth.route.js"
 import messageRoutes from "./routes/message.route.js"
+import { app, server } from "./lib/socket.js";
 
 import User from "./models/user.model.js";
 import { connectDB } from "./lib/db.js";
@@ -16,7 +17,7 @@ import cors from 'cors';
 
 
 
-const app = express();
+
 
 // it's important that you don't parse the webhook event data, it should be in the raw format
 app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }), clerkWebhook);
@@ -57,7 +58,7 @@ if (fs.existsSync(publicDir)) {
 
 
 
-app.listen(PORT, "0.0.0.0", () => {
+server.listen(PORT, "0.0.0.0", () => {
   connectDB();
   console.log(`Server is running on port ${PORT}`);
 
